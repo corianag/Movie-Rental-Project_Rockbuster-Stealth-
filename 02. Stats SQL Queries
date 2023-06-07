@@ -1,0 +1,38 @@
+Basic Stats
+
+a) Min, Max, Average & Count
+
+SELECT 
+MIN(rental_rate) AS min_rent, 
+MAX(rental_rate) AS max_rent, 
+MIN(rental_duration) AS min_rental_duration, 
+MAX(rental_duration) AS max_rental_duration, 
+MIN(replacement_cost) AS min_replacement_cost, 
+MAX(replacement_cost) AS max_replacement_cost, 
+MIN(length) AS min_length, 
+MAX(length) AS max_legth, 
+AVG(rental_rate) AS avg_rent, 
+AVG(rental_duration) AS avg_rental_duration, 
+AVG(replacement_cost) AS avg_replacement_cost, 
+AVG(length) AS avg_legth, 
+COUNT(rental_rate) AS count_rent_values, 
+COUNT(rental_duration) AS count_rental_duration, 
+COUNT(length) AS count_legth, 
+COUNT(*) AS count_rows 
+FROM film; 
+
+b) Mode
+
+SELECT MODE() WITHIN GROUP (ORDER BY rating) AS rating_mode_value,
+MODE() WITHIN GROUP (ORDER BY title) AS title_mode_value,
+MODE() WITHIN GROUP (ORDER BY description) AS description_mode_value 
+FROM film; 
+
+c) Mode within Group/Order By
+
+SELECT MODE() WITHIN GROUP (ORDER BY first_name) AS first_name_mode_value, 
+             MODE() WITHIN GROUP (ORDER BY last_name) AS last_name_mode_value, 
+             MODE() WITHIN GROUP (ORDER BY email) AS email_mode_value,
+             MODE() WITHIN GROUP (ORDER BY activebool) AS activebool_mode_value, 
+             MODE() WITHIN GROUP (ORDER BY active) AS active_mode_value 
+FROM customer; 
